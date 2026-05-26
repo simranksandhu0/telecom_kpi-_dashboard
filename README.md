@@ -167,23 +167,9 @@ DIVIDE(
 ## File Structure
 
 ```
-telecom-kpi-dashboard/
-├── dashboards/
-│   └── telecom_kpi_suite.pbix          # Power BI file (all 5 dashboards)
-├── pipeline/
-│   ├── extract.py                      # Raw data extraction
-│   ├── transform.py                    # Spark-based transformations
-│   ├── validate.py                     # Automated validation checks
-│   └── load.py                         # Output to processed layer
-├── notebooks/
-│   └── kpi_framework_design.ipynb      # KPI selection and rationale
-├── data/
-│   └── sample_telecom_data.parquet     # Anonymised sample (subset)
-├── screenshots/
-│   ├── executive_summary.png
-│   ├── churn_monitor.png
-│   └── revenue_tracker.png
-├── requirements.txt
+telecom_kpi-_dashboard/
+├── pipeline/             # Data pipeline scripts (extract, transform, validate, load)
+├── generate_data.py      # Generates synthetic telecom KPI data
 └── README.md
 ```
 
@@ -191,30 +177,28 @@ telecom-kpi-dashboard/
 
 ## How to Run the Pipeline
 
-```bash
-git clone https://github.com/your-username/telecom-kpi-dashboard.git
-cd telecom-kpi-dashboard
 
-# Install dependencies
-# requirements.txt includes: pyspark, pandas, pyarrow, pytest, jupyter
-pip install -r requirements.txt
+## How to Run the Pipeline
 
-# Run the full pipeline
+```
+# Clone the repo
+git clone https://github.com/simranksandhu0/telecom_kpi-_dashboard.git
+cd telecom_kpi-_dashboard
+
+# Generate synthetic telecom data
+python generate_data.py
+
+# Run the pipeline
 python pipeline/extract.py
 python pipeline/transform.py
 python pipeline/validate.py
 python pipeline/load.py
+
 ```
 
 To open the dashboard: download `dashboards/telecom_kpi_suite.pbix` and open in Power BI Desktop.
 
 ---
-
-## How to Open the Dashboard
-
-1. Download `dashboards/telecom_kpi_suite.pbix`
-2. Open in Power BI Desktop (free download from Microsoft)
-3. Connect to `data/sample_telecom_data.parquet` if prompted to refresh the data source
 
 ---
 
