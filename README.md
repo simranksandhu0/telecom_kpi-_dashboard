@@ -177,9 +177,6 @@ telecom_kpi-_dashboard/
 
 ## How to Run the Pipeline
 
-
-## How to Run the Pipeline
-
 ```
 # Clone the repo
 git clone https://github.com/simranksandhu0/telecom_kpi-_dashboard.git
